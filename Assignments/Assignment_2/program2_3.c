@@ -2,14 +2,13 @@
 
 void Display(int iNo)
 {
-    int iCnt=0;
-
-    //Updator
-
-    while(iCnt<iNo)
+    if(iNo<10)
     {
-        printf("*");
-        iCnt++;
+        printf("Hello");
+    }
+    else
+    {
+        printf("Demo");
     }
 }
 

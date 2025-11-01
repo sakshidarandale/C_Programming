@@ -2,16 +2,15 @@
 
 void Display(int iNo)
 {
-    int iCnt=0;
+    //Write Updator
 
-    //Updator
-
-    while(iCnt<iNo)
+    while(iNo>0)
     {
         printf("*");
-        iCnt++;
+        iNo--;
     }
 }
+
 
 int main()
 
