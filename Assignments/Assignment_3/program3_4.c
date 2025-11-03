@@ -1,4 +1,3 @@
-//4. Accept one character from user and convert case of that character.
 
 #include <stdio.h>
 
@@ -22,4 +21,5 @@ int main()
     scanf("%c",&cValue);
     DisplayConvert(cValue);
     return 0;
+
 }
