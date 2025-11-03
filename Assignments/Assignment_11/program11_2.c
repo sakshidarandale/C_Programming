@@ -1,16 +1,27 @@
 
 #include<stdio.h>
 
-void RangeDisplay(int iStart, int iEnd)
+void RangeDisplayEven(int iStart, int iEnd)
 {
     // Logic
     int iCnt=0;
 
+    if(iStart>iEnd)
+    {
+        {
+            printf("Invalid range");
+        }
+ 
+    }
+
     for(iCnt=iStart;iCnt<=iEnd;iCnt++)
     {
-        printf("%d\t",iCnt);
+        if((iCnt%2)==0)
+        {
+            printf("%d\t",iCnt);
+        }
     }
-   
+
 }
 int main()
 {
@@ -21,7 +32,7 @@ int main()
     printf("Enter ending point : ");
     scanf("%d",&iValue2);
 
-    RangeDisplay(iValue1,iValue2);
+    RangeDisplayEven(iValue1,iValue2);
 
     return 0;
 }
