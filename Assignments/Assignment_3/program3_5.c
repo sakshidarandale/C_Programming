@@ -1,4 +1,3 @@
-//5.Accept one character from user and check whether it is a vowel or not
 
 #include <stdio.h>
 
@@ -39,3 +38,4 @@ int main()
 
     return 0;
 }
+
