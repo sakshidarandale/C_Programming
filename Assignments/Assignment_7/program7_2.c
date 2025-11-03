@@ -14,7 +14,7 @@ void Pattern(int iNo)
 
     for(iCnt=1;iCnt<=iNo;iCnt++)
     {
-        printf("$\t *\t");
+        printf("%d\t",iCnt);
     }
     printf("\n");
 }
@@ -28,7 +28,6 @@ int main()
 
     Pattern(iValue);
     return 0;
-
 }
 
 //Time Complexity is O(N)

@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void Pattern(int iNo)
+void OddDisplay(int iNo)
 {
     // Logic
     int iCnt=0;
@@ -14,9 +14,13 @@ void Pattern(int iNo)
 
     for(iCnt=1;iCnt<=iNo;iCnt++)
     {
-        printf("$\t *\t");
+        if((iCnt%2)!=0)
+        {
+            printf("%d\t",iCnt);
+        }
+        
     }
-    printf("\n");
+    
 }
 
 int main()
@@ -26,9 +30,8 @@ int main()
     printf("Enter number");
     scanf("%d",&iValue);
 
-    Pattern(iValue);
+    OddDisplay(iValue);
     return 0;
-
 }
 
 //Time Complexity is O(N)

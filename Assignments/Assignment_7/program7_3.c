@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void Pattern(int iNo)
+void Display(int iNo)
 {
     // Logic
     int iCnt=0;
@@ -12,9 +12,9 @@ void Pattern(int iNo)
         iNo=-iNo;
     }
 
-    for(iCnt=1;iCnt<=iNo;iCnt++)
+    for(iCnt=-iNo;iCnt<=iNo;iCnt++)
     {
-        printf("$\t *\t");
+        printf("%d\t",iCnt);
     }
     printf("\n");
 }
@@ -26,9 +26,8 @@ int main()
     printf("Enter number");
     scanf("%d",&iValue);
 
-    Pattern(iValue);
+    Display(iValue);
     return 0;
-
 }
 
 //Time Complexity is O(N)
