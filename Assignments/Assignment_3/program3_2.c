@@ -1,4 +1,4 @@
-//2. Write a program which accept number from user and print even factors of that number.
+
 
 #include <stdio.h>
 
@@ -29,3 +29,4 @@ int main()
 
     return 0;
 }
+
