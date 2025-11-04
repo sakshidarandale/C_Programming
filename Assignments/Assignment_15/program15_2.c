@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int CountOdd(int iNo)
 {
     int iCount = 0;
     int iDigit = 0;
@@ -12,13 +12,13 @@ int CountEven(int iNo)
 
     if(iNo == 0)
     {
-        return 1;
+        return 0;
     }
 
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        if(iDigit % 2 == 0)
+        if((iDigit % 2) != 0)
         {
             iCount++;
         }
@@ -35,7 +35,7 @@ int main()
     printf("Enter number: ");
     scanf("%d", &iValue);
 
-    iRet = CountEven(iValue);
+    iRet = CountOdd(iValue);
 
     printf("The count of even digits is: %d\n", iRet);
 

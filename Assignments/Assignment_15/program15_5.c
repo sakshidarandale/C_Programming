@@ -1,30 +1,39 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int CountDiff(int iNo)
 {
-    int iCount = 0;
     int iDigit = 0;
+    int iEvenSum=0;
+    int iOddSum=0;
+
+
 
     if(iNo < 0)
     {
         iNo = -iNo;
     }
 
-    if(iNo == 0)
-    {
-        return 1;
-    }
+    // if(iNo == 0)
+    // {
+    //     return 0;
+    // }
 
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        if(iDigit % 2 == 0)
+
+        if((iDigit%2)==0)
         {
-            iCount++;
+            iEvenSum=iEvenSum+iDigit;
         }
+        else
+        {
+            iOddSum=iOddSum+iDigit;
+        }
+
         iNo = iNo / 10;
     }
-    return iCount;
+    return (iEvenSum)-(iOddSum);
 }
 
 int main()
@@ -35,9 +44,9 @@ int main()
     printf("Enter number: ");
     scanf("%d", &iValue);
 
-    iRet = CountEven(iValue);
+    iRet = CountDiff(iValue);
 
-    printf("The count of even digits is: %d\n", iRet);
+    printf("The is: %d\n", iRet);
 
     return 0;
 }
