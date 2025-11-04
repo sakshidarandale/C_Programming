@@ -1,9 +1,10 @@
 
 #include <stdio.h>
 
-void PrintFactors(int iNo)
+int CountFactors(int iNo)
 {
     int iCnt=0;
+     int iFrequency=0;
 
     if(iNo<0)
     {
@@ -14,18 +15,22 @@ void PrintFactors(int iNo)
     {
         if((iNo%iCnt)==0)
         {
-            printf("%d\t",iCnt);
-        }  
+            iFrequency++;
+        }
     }
+    return iFrequency;
 }
 int main()
 {
     int iValue;
+    int iRet=0;
 
     printf("Enter number : ");
     scanf("%d", &iValue);
 
-    PrintFactors(iValue);
+    iRet=CountFactors(iValue);
+
+    printf("Number of factors are : %d\n",iRet);
 
     return 0;
 }

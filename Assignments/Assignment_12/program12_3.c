@@ -1,9 +1,10 @@
 
 #include <stdio.h>
 
-void PrintFactors(int iNo)
+int SumOfFactors(int iNo)
 {
     int iCnt=0;
+    int iSum=0;
 
     if(iNo<0)
     {
@@ -14,18 +15,22 @@ void PrintFactors(int iNo)
     {
         if((iNo%iCnt)==0)
         {
-            printf("%d\t",iCnt);
-        }  
+           iSum=iSum+iCnt;
+        }   
     }
+    return iSum;
 }
 int main()
 {
     int iValue;
+    int iRet=0;
 
     printf("Enter number : ");
     scanf("%d", &iValue);
 
-    PrintFactors(iValue);
+    iRet=SumOfFactors(iValue);
+
+    printf("Sum of factors is : %d\n",iRet);
 
     return 0;
 }
