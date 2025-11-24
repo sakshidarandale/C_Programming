@@ -3,13 +3,14 @@
 // Input / Output
 // 
 //  Input:
-//  rows : 3
-//  columns : 4
+//  rows : 4
+//  columns : 3
 
 //  Output:
-//  *   *   *   *
-//  *   *   *   *
-//  *   *   *   *
+//  1   2   3 
+//  1   2   3 
+//  1   2   3 
+//  1   2   3 
 //
 /////////////////////////////////////////////////////////////////////
 
@@ -41,7 +42,7 @@ void Pattern(int iRow,int iCol)
         {
             for(j = 1; j <= iCol; j++)
             {
-                printf("*\t");
+                printf("%d\t",j);
             }
             printf("\n"); 
         }
