@@ -1,13 +1,12 @@
-///////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////
 //   
 //  Input :5
 //   
 //  Output :
 //   
-//    A    B   C   D   E
+//          5   #   4   #   3   #   2   #   1   #
 //                         
 ////////////////////////////////////////////////////////////// 
-
 
 /////////////////////////////////////////////////////////////////////
 //
@@ -21,7 +20,8 @@
 //
 //  Function Name  : Pattern 
 //  Function Name  : Display
-//  Description    : It is used to display characters from A to E
+//  Description    : It is used to display numbers in reverse 
+//                   order with # in between
 //  Input          : integer
 //  Output         : void
 //  Author         : Sakshi Ravindra Darandale
@@ -31,14 +31,14 @@
 
 void Pattern(int iNo)
 {
-    int iCnt=0;
-    
-    char ch='A';
-    for(iCnt=1;iCnt<=iNo;iCnt++)
-    {
-        printf("%c\t",ch);
-        ch++;
-    }
+    int iCount=0;
+            
+        for(iCount=iNo;iCount>=1; iCount--)
+        {
+            printf("%d\t",iCount);
+        
+            printf("#\t");
+        }
 }
 
 /////////////////////////////////////////////////////////////////////

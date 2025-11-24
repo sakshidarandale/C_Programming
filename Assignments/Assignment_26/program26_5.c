@@ -1,13 +1,12 @@
 ///////////////////////////////////////////////////////////////
 //   
-//  Input :5
+//  Input :8
 //   
 //  Output :
 //   
-//    A    B   C   D   E
+//    2     4      6      8      10     12     14     16  
 //                         
 ////////////////////////////////////////////////////////////// 
-
 
 /////////////////////////////////////////////////////////////////////
 //
@@ -21,7 +20,7 @@
 //
 //  Function Name  : Pattern 
 //  Function Name  : Display
-//  Description    : It is used to display characters from A to E
+//  Description    : It is used to display numbers with * in between
 //  Input          : integer
 //  Output         : void
 //  Author         : Sakshi Ravindra Darandale
@@ -32,13 +31,11 @@
 void Pattern(int iNo)
 {
     int iCnt=0;
-    
-    char ch='A';
-    for(iCnt=1;iCnt<=iNo;iCnt++)
-    {
-        printf("%c\t",ch);
-        ch++;
-    }
+            
+        for(iCnt=1;iCnt<=iNo;iCnt++)
+        {
+            printf("%d\t",iCnt*2);
+        }
 }
 
 /////////////////////////////////////////////////////////////////////
