@@ -5,12 +5,12 @@
 //  Input:
 //  rows : 4
 //  columns : 4
-//
+
 //  Output:
 //  A B C D
+//  a b c d
 //  A B C D
-//  A B C D
-//  A B C D
+//  a b c d
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -35,15 +35,21 @@
 
 void Pattern(int iRow,int iCol)
 {
-    int i=0,j=0;
-    
-    char ch='\0';
-        
-    for(i=1;i<=iRow;i++)
+    int i = 0, j = 0;
+
+    for(i = 1 ; i <= iRow; i++) 
     {
-        for(j=1,ch='A';j<=iCol;j++, ch++)
+        
+        for(j = 1; j <=iCol; j++)
         {
-            printf("%c\t",ch);       
+            if(i % 2 !=0)
+            {
+                printf("%c\t", 'A' + j - 1);
+            }
+            else
+            {
+                printf("%c\t",'a' + j-1);
+            }
         }
         printf("\n");
     } 
