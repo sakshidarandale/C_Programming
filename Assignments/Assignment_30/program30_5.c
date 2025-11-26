@@ -8,11 +8,11 @@
 //
 //  Output:
 // 
-//   *   #   #   #
-//   *   *   #   #
-//   *   *   *   #
-//   *   *   *   *
-//   
+//   1  2   3   4
+//   1  *   *   4
+//   1  *   *   4
+//   1  2   3   4
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -47,17 +47,19 @@ void Pattern(int iRow,int iCol)
             printf("Row number and Column number should be same");
             return;
         }
+        
         for(i = 1; i <= iRow; i++) 
         {
             for(j = 1; j <= iCol; j++)
             {
-                if(i>=j)
+            
+                if(i==1 || i==iRow || j==1 || j==iCol)
                 {
-                    printf("*\t");
+                    printf("%d\t",j);
                 }
                 else
                 {
-                    printf("#\t");
+                    printf("*\t");
                 }
             }
             printf("\n");  
