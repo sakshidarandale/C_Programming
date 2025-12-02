@@ -5,28 +5,29 @@
 /////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include<stdbool.h>
+#include <stdbool.h>
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  CheckAlpha
-//  Description:    It is used to check whether the entered character 
-//                  is an alphabet (A-Z or a-z) or not
+//  Function Name:  CheckSmall
+//  Description:    It is used to check whether the entered character
+//                  is a small case alphabet or not
 //  Input:          char
-//  Output:         BOOL (TRUE / FALSE)
+//  Output:         BOOL (TRUE/FALSE)
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           27/11/2025
 //
 ////////////////////////////////////////////////////////////////
+
 #define TRUE 1
 #define FALSE 0
 
 typedef int BOOL;
 
-BOOL CheckAlpha(char ch)
+BOOL CheckSmall(char ch)
 {
    
-    if((ch>='a'&&ch<='z') ||  (ch>='A'&&ch<='Z'))
+    if (ch >= 'a' && ch <= 'z')
     {
         return TRUE;
     }
@@ -45,21 +46,21 @@ BOOL CheckAlpha(char ch)
 
 int main()
 {
-    char cValue='\0';
-    BOOL bRet=FALSE;
+    char cValue = '\0';
+    BOOL bRet = FALSE;
     
     printf("Enter the character : ");
-    scanf("%c",&cValue);
+    scanf("%c", &cValue);
     
-    bRet=CheckAlpha(cValue);
+    bRet = CheckSmall(cValue);
     
-    if(bRet==TRUE)
+    if(bRet == TRUE)
     {
-        printf("It is Character");
+        printf("It is a Small case Character");
     }
     else
     {
-       printf("It is not a Character"); 
+       printf("It is not a Small case Character"); 
     }
     return 0;
 }
