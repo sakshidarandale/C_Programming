@@ -8,23 +8,23 @@
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  strlwrX
-//  Description:    It is used to convert all uppercase letters in
-//                  a string to lowercase
-//  Input:          char* (Character array / string)
-//  Output:         void (Updates string to lowercase)
+//  Function Name:  struprX
+//  Description:    It is used to convert all lowercase letters in
+//                  a string to uppercasecase
+//  Input:          char* 
+//  Output:         void 
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           30/11/2025
 //
 ////////////////////////////////////////////////////////////////
 
-void strlwrX(char str[])
+void struprX(char str[])
 {
    while(*str != '\0')
    {
-        if(*str >= 'A' && *str <= 'Z')
+        if(*str >= 'a' && *str <= 'z')
         {
-            *str = *str + 32;
+            *str = *str - 32;
         }
         str++;
    }
@@ -43,9 +43,9 @@ int main()
     printf("Enter the string : ");
     scanf(" %[^'\n']s", Arr);
     
-    strlwrX(Arr);
+    struprX(Arr);
     
-    printf("Updated string is %s", Arr);
+    printf("Updated string is : %s\n", Arr);
     return 0;
 }
 

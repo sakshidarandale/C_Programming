@@ -1,3 +1,4 @@
+
 /////////////////////////////////////////////////////////////////////
 //
 //  Required Header Files
@@ -6,28 +7,32 @@
 
 #include <stdio.h>
 
-////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 //
-//  Function Name:  strlwrX
-//  Description:    It is used to convert all uppercase letters in
-//                  a string to lowercase
-//  Input:          char* (Character array / string)
-//  Output:         void (Updates string to lowercase)
+//  Function Name:  CountSpaces
+//  Description:    It is used to count the number of space
+//                  characters present in the given string
+//  Input:          char*
+//  Output:         void
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           30/11/2025
 //
 ////////////////////////////////////////////////////////////////
 
-void strlwrX(char str[])
+void CountSpaces(char str[])
 {
-   while(*str != '\0')
-   {
-        if(*str >= 'A' && *str <= 'Z')
+    int iCount=0;
+    
+    while(*str != '\0')
+    {
+        if(*str==' ')
         {
-            *str = *str + 32;
+            iCount++;
         }
         str++;
-   }
+    }  
+    
+    printf("Number of spaces characters are : %d\n",iCount);
 }
 
 ////////////////////////////////////////////////////////////////
@@ -38,14 +43,13 @@ void strlwrX(char str[])
 
 int main()
 {
-    char Arr[20] = {'\0'};
+    char Arr[50] = {'\0'};
     
     printf("Enter the string : ");
-    scanf(" %[^'\n']s", Arr);
+    scanf("%[^\n]", Arr);
     
-    strlwrX(Arr);
+    CountSpaces(Arr);
     
-    printf("Updated string is %s", Arr);
     return 0;
 }
 
