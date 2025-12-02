@@ -12,7 +12,7 @@
 //  Description:    It is used to display exam schedule based on division
 //                  (A, B, C, or D)
 //  Input:          char 
-//  Output:         BOOL (TRUE/FALSE)
+//  Output:         void
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           27/11/2025
 //
@@ -69,3 +69,4 @@ int main()
 //  End of main function
 //
 ////////////////////////////////////////////////////////////////
+
