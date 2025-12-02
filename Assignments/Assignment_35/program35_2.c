@@ -8,8 +8,8 @@
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  CountCapital
-//  Description:    It is used to count capital letters in a string
+//  Function Name:  CountSmall
+//  Description:    It is used to count small case letters in a string
 //  Input:          char* 
 //  Output:         int 
 //  Author:         Sakshi Ravindra Darandale
@@ -17,13 +17,13 @@
 //
 ////////////////////////////////////////////////////////////////
 
-int CountCapital(char str[])
+int CountSmall(char str[])
 {
     int iCount = 0;
     
     while(*str != '\0')
     {
-        if(*str >= 'A' && *str <= 'Z')
+        if(*str >= 'a' && *str <= 'z')
         {
             iCount++;
         }
@@ -44,12 +44,12 @@ int main()
     int iRet = 0;
     
     printf("Enter the string : ");
-    scanf("%[^'\n']s",Arr);
+    scanf("%[^'\n']s", Arr);
     
-    iRet = CountCapital(Arr);
+    iRet = CountSmall(Arr);
     
-    printf("Number of capital characters are : %d\n",iRet);
-    
+    printf("Number of small characters are : %d\n", iRet);
+
     return 0;
 }
 

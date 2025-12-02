@@ -4,32 +4,33 @@
 //
 /////////////////////////////////////////////////////////////////////
 
-#include<stdio.h>
+#include <stdio.h>
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  CountCapital
-//  Description:    It is used to count capital letters in a string
+//  Function Name:  ReverseDisplay
+//  Description:    It is used to display the given string in reverse
+//                  order
 //  Input:          char* 
-//  Output:         int 
+//  Output:         void 
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           27/11/2025
 //
 ////////////////////////////////////////////////////////////////
 
-int CountCapital(char str[])
+void ReverseDisplay(char str[])
 {
-    int iCount = 0;
-    
+    char *temp = str;
     while(*str != '\0')
     {
-        if(*str >= 'A' && *str <= 'Z')
-        {
-            iCount++;
-        }
         str++;
     }
-    return iCount;
+    
+    while(str >= temp)
+    {
+        printf("%c", *str);
+        str--;
+    }
 }
 
 ////////////////////////////////////////////////////////////////
@@ -40,16 +41,13 @@ int CountCapital(char str[])
 
 int main()
 {
-    char Arr[20] = {'\0'};
-    int iRet = 0;
+    char Arr[50] = {'\0'};
     
     printf("Enter the string : ");
-    scanf("%[^'\n']s",Arr);
+    scanf("%[^'\n']s", Arr);
     
-    iRet = CountCapital(Arr);
-    
-    printf("Number of capital characters are : %d\n",iRet);
-    
+    ReverseDisplay(Arr);
+
     return 0;
 }
 
