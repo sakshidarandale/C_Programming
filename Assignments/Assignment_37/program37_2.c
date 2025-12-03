@@ -5,36 +5,31 @@
 /////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdbool.h>
-
-#define TRUE 1
-#define FALSE 0
-
-typedef int  BOOL;
 
 ///////////////////////////////////////////////////////////////
 //
-//  Function Name:  CheckChar
-//  Description:    It is used to check whether the entered 
-//                  character is present in the given string or not
+//  Function Name:  CountChar
+//  Description:    It is used to count the frequency of the 
+//                  entered character in the given string
 //  Input:          char*, char
-//  Output:         BOOL (TRUE/FALSE)
+//  Output:         int (count of character)
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           01/12/2025
 //
 ////////////////////////////////////////////////////////////////
 
-BOOL CheckChar(char *str,char ch)
+int CountChar(char str[],char ch)
 {
+    int iCount=0;
     while(*str != '\0')
     {
         if(*str == ch)
         {
-            return TRUE;
+           iCount++; 
         }
         str++;
     }
-    return FALSE;
+    return iCount;
 }
 
 ////////////////////////////////////////////////////////////////
@@ -47,7 +42,7 @@ int main()
 {
     char Arr[50] = {'\0'};
     char cValue='\0';
-    BOOL bRet=FALSE;
+    int iRet=0;
     
     printf("Enter the string : ");
     scanf("%[^'\n']s", Arr);
@@ -55,16 +50,9 @@ int main()
     printf("Enter the character: ");
     scanf(" %c",&cValue);
     
-    bRet=CheckChar(Arr,cValue);
+    iRet=CountChar(Arr,cValue);
     
-    if(bRet==TRUE)
-    {
-        printf("Character found");
-    }
-    else
-    {
-       printf("Character not found"); 
-    }
+    printf("Character frequency is : %d",iRet);
     
     return 0;
 }

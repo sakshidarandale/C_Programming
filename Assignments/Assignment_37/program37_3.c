@@ -5,36 +5,34 @@
 /////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdbool.h>
-
-#define TRUE 1
-#define FALSE 0
-
-typedef int  BOOL;
 
 ///////////////////////////////////////////////////////////////
 //
-//  Function Name:  CheckChar
-//  Description:    It is used to check whether the entered 
-//                  character is present in the given string or not
+//  Function Name:  FirstChar
+//  Description:    It is used to return the index of first
+//                  occurrence of the entered character in the string.
+//                  (If character not found return -1)
 //  Input:          char*, char
-//  Output:         BOOL (TRUE/FALSE)
+//  Output:         int (index value)
 //  Author:         Sakshi Ravindra Darandale
-//  Date:           01/12/2025
+//  Date:           02/12/2025
 //
-////////////////////////////////////////////////////////////////
-
-BOOL CheckChar(char *str,char ch)
+////////////////////////////////////////////////////////////                        
+////
+int FirstChar(char str[],char ch)
 {
+    int iIndex=0;
+    
     while(*str != '\0')
     {
         if(*str == ch)
         {
-            return TRUE;
+            return iIndex;
         }
         str++;
+        iIndex++;
     }
-    return FALSE;
+    return -1;
 }
 
 ////////////////////////////////////////////////////////////////
@@ -47,7 +45,7 @@ int main()
 {
     char Arr[50] = {'\0'};
     char cValue='\0';
-    BOOL bRet=FALSE;
+    int iRet=0;
     
     printf("Enter the string : ");
     scanf("%[^'\n']s", Arr);
@@ -55,16 +53,9 @@ int main()
     printf("Enter the character: ");
     scanf(" %c",&cValue);
     
-    bRet=CheckChar(Arr,cValue);
+    iRet=FirstChar(Arr,cValue);
     
-    if(bRet==TRUE)
-    {
-        printf("Character found");
-    }
-    else
-    {
-       printf("Character not found"); 
-    }
+    printf("Character location is : %d",iRet);
     
     return 0;
 }
