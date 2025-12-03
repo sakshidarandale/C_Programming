@@ -8,34 +8,33 @@
 
 ///////////////////////////////////////////////////////////////
 //
-//  Function Name:  StrCpyRev
+//  Function Name:  StrCpyToggle
 //  Description:    It copies the source string into the
-//                  destination string in reverse order. It does not
-//                  modify the original string.
-//  Input:          char* , char* 
-//  Output:         void 
+//                  destination string by toggling case of alphabets.
+//  Input:          char* , char*
+//  Output:         void
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           01/12/2025
 //
-///////////////////////////////////////////////////////////////               
-
-void StrCpyRev(char *src,char *dest)
+///////////////////////////////////////////////////////////////
+void StrCpyToggle(char *src,char *dest)
 {
-
-    char *end=src;
-    
-
-    while(*end!='\0')
+    while(*src!='\0')
     {
-       end++;
-    }
-    end--;
-    
-    while(src<=end)
-    {
-        *dest=*end;
+        if((*src>='A' && *src<='Z'))
+        {
+            *dest=*src+32;
+        }
+        else if((*src>='a' && *src<='z'))
+        {
+            *dest=*src-32;   
+        }
+        else
+        {
+            *dest=*src;
+        }
+        src++;
         dest++;
-        end--;
     }
     *dest='\0';
 }
@@ -55,9 +54,9 @@ int main()
     printf("Enter the string : ");
     scanf("%[^'\n']s", Arr);
     
-    StrCpyRev(Arr,Brr);
+    StrCpyToggle(Arr,Brr);
     
-    printf("The reversed string is :%s",Brr);
+    printf("The updated string is :%s",Brr);
     
     return 0;
 }

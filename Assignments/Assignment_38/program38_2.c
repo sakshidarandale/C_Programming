@@ -8,10 +8,9 @@
 
 ///////////////////////////////////////////////////////////////
 //
-//  Function Name:  StrCpyRev
+//  Function Name:  StrCpyX
 //  Description:    It copies the source string into the
-//                  destination string in reverse order. It does not
-//                  modify the original string.
+//                  destination string in reverse order and removes the whitespaces
 //  Input:          char* , char* 
 //  Output:         void 
 //  Author:         Sakshi Ravindra Darandale
@@ -19,7 +18,7 @@
 //
 ///////////////////////////////////////////////////////////////               
 
-void StrCpyRev(char *src,char *dest)
+void StrCpyX(char *src,char *dest)
 {
 
     char *end=src;
@@ -33,8 +32,12 @@ void StrCpyRev(char *src,char *dest)
     
     while(src<=end)
     {
-        *dest=*end;
-        dest++;
+        if(*end!= ' ')
+        {
+            *dest=*end;
+            dest++;
+        }
+        
         end--;
     }
     *dest='\0';
@@ -55,9 +58,9 @@ int main()
     printf("Enter the string : ");
     scanf("%[^'\n']s", Arr);
     
-    StrCpyRev(Arr,Brr);
+    StrCpyX(Arr,Brr);
     
-    printf("The reversed string is :%s",Brr);
+    printf("The reversed string without spaces is :%s",Brr);
     
     return 0;
 }
