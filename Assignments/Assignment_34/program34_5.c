@@ -1,0 +1,54 @@
+/////////////////////////////////////////////////////////////////////
+//
+//  Required Header Files
+//
+/////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+
+//////////////////////////////////////////////////////////////////////
+//
+//  Function Name:  Display
+//  Description:    It prints characters ASCII Value of a character 
+//                  in decimal,octal and hexadecimal format         
+//  Input:          char
+//  Output:         void 
+//  Author:         Sakshi Ravindra Darandale
+//  Date:           30/11/2025
+//
+////////////////////////////////////////////////////////////////
+
+void Display(char ch)
+{
+    if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    {
+        printf("Decimal format:%d\n",ch);
+        printf("Octal format:%#o\n",ch);
+        printf("Hexadecimal format:%#x\n",ch);
+        
+    }
+}
+
+////////////////////////////////////////////////////////////////
+//
+//  Entry point function
+//
+////////////////////////////////////////////////////////////////
+
+int main()
+{
+    char cValue='\0';
+    
+    printf("Enter the character : ");
+    scanf(" %c",&cValue);
+    
+    Display(cValue);
+    
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////
+//
+//  End of main function
+//
+////////////////////////////////////////////////////////////////
