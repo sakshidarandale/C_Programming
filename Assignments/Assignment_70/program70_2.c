@@ -9,24 +9,32 @@
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  Display
-//  Description:    It is used to display numbers and '*' 
-//                  using recursion.
-//  Input:          int
-//  Output:         void
+//  Function Name:  Sum
+//  Description:    It is used to calculate the sum of digits
+//                  of a given number using recursion
+//  Input:          int 
+//  Output:         int 
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           08/02/2026
 //
 ////////////////////////////////////////////////////////////////
 
-void Display(int iNo)
+int Sum(int iNo)
 {
-    if(iNo > 0)
+   
+    static int iSum = 0;
+    static int iDigit = 0;
+
+    if(iNo != 0)
     {
-        printf("%d\t *\t",iNo);
-        iNo--;
-        Display(iNo);
+      iDigit = iNo % 10;
+      iSum = iSum + iDigit;
+      iNo = iNo/10;
+
+      Sum(iNo);
     }
+
+    return iSum;
 }
 
 ////////////////////////////////////////////////////////////////
@@ -38,11 +46,14 @@ void Display(int iNo)
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
     printf("Enter the number : ");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    iRet = Sum(iValue);
+
+    printf("Sum of digits is : %d\n",iRet);
     
     return 0;
 }

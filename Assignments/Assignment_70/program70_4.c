@@ -9,24 +9,30 @@
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  Display
-//  Description:    It is used to display numbers and '*' 
-//                  using recursion.
-//  Input:          int
-//  Output:         void
+//  Function Name:  Factorial
+//  Description:    It is used to calculate the factorial
+//                  of a given number using recursion
+//  Input:          int 
+//  Output:         int 
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           08/02/2026
 //
 ////////////////////////////////////////////////////////////////
 
-void Display(int iNo)
+int Factorial(int iNo)
 {
-    if(iNo > 0)
+   
+    static int iFact = 1;
+
+    if(iNo>=1)
     {
-        printf("%d\t *\t",iNo);
-        iNo--;
-        Display(iNo);
+      iFact = iFact * iNo;
+      iNo--;
+
+      Factorial(iNo);
     }
+
+    return iFact;
 }
 
 ////////////////////////////////////////////////////////////////
@@ -38,11 +44,14 @@ void Display(int iNo)
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
     printf("Enter the number : ");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    iRet = Factorial(iValue);
+
+    printf("Factorial : %d\n",iRet);
     
     return 0;
 }
