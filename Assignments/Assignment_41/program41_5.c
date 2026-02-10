@@ -9,24 +9,32 @@
 
 ////////////////////////////////////////////////////////////////
 //
-//  Function Name:  Display
-//  Description:    It is used to display numbers and '*' 
-//                  using recursion.
-//  Input:          int
-//  Output:         void
+//  Function Name:  Mult
+//  Description:    It is used to calculate the product of digits
+//                  in a given number using recursion
+//  Input:          int 
+//  Output:         int 
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           08/02/2026
 //
 ////////////////////////////////////////////////////////////////
 
-void Display(int iNo)
+int Mult(int iNo)
 {
-    if(iNo > 0)
+   
+    static int iMult = 1;
+    int iDigit = 0;
+
+    if(iNo != 0)
     {
-        printf("%d\t *\t",iNo);
-        iNo--;
-        Display(iNo);
+      iDigit = iNo % 10;
+      iMult = iMult *  iDigit;
+      iNo = iNo/10;
+
+      Mult(iNo);
     }
+
+    return iMult;
 }
 
 ////////////////////////////////////////////////////////////////
@@ -38,11 +46,14 @@ void Display(int iNo)
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
     printf("Enter the number : ");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    iRet = Mult(iValue);
+
+    printf("Product of digits is : %d\n",iRet);
     
     return 0;
 }
