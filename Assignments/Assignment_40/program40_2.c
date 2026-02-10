@@ -1,3 +1,4 @@
+
 ///////////////////////////////////////////////////////////////////
 //
 //  Required Header Files
@@ -9,9 +10,9 @@
 ////////////////////////////////////////////////////////////////
 //
 //  Function Name:  Display
-//  Description:    It is used to display '*'  using
-//                  recursion.
-//  Input:          int
+//  Description:    It is used to display numbers with '*' 
+//                  in decreasing order using recursion.
+//  Input:          void
 //  Output:         void
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           08/02/2026
@@ -22,9 +23,8 @@ void Display(int iNo)
 {
     if(iNo > 0)
     {
-        printf("*\t");
+        printf("%d\t *\t",iNo);
         iNo--;
-
         Display(iNo);
     }
 }
@@ -43,7 +43,7 @@ int main()
     scanf("%d",&iValue);
 
     Display(iValue);
-
+    
     return 0;
 }
 

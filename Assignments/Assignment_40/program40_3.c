@@ -1,3 +1,4 @@
+
 ///////////////////////////////////////////////////////////////////
 //
 //  Required Header Files
@@ -9,8 +10,8 @@
 ////////////////////////////////////////////////////////////////
 //
 //  Function Name:  Display
-//  Description:    It is used to display '*'  using
-//                  recursion.
+//  Description:    It is used to display numbers from 5 to 1
+//                  using recursion.
 //  Input:          int
 //  Output:         void
 //  Author:         Sakshi Ravindra Darandale
@@ -20,11 +21,11 @@
 
 void Display(int iNo)
 {
-    if(iNo > 0)
+    
+    if(iNo>=1)
     {
-        printf("*\t");
+        printf("%d\t",iNo);
         iNo--;
-
         Display(iNo);
     }
 }
