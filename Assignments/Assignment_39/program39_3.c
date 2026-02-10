@@ -9,25 +9,23 @@
 ////////////////////////////////////////////////////////////////
 //
 //  Function Name:  Display
-//  Description:    It is used to display '*'  using
-//                  recursion and static variable
-//  Input:          void
+//  Description:    It is used to display numbers from 5 to 1
+//                  using recursion.
+//  Input:          int
 //  Output:         void
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           08/02/2026
 //
 ////////////////////////////////////////////////////////////////
 
-void Display()
+void Display(int iNo)
 {
-    static int i = 1;
-
-    if(i<=5)
+    
+    if(iNo>=1)
     {
-        printf("*\t");
-        i++;
-
-        Display();
+        printf("%d\t",iNo);
+        iNo--;
+        Display(iNo);
     }
 }
 
@@ -39,7 +37,7 @@ void Display()
 
 int main()
 {
-    Display();
+    Display(5);
 
     return 0;
 }

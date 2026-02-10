@@ -1,3 +1,4 @@
+
 ///////////////////////////////////////////////////////////////////
 //
 //  Required Header Files
@@ -9,25 +10,25 @@
 ////////////////////////////////////////////////////////////////
 //
 //  Function Name:  Display
-//  Description:    It is used to display '*'  using
-//                  recursion and static variable
-//  Input:          void
+//  Description:    It is used to display numbers from A to E
+//                  using recursion.
+//  Input:          int
 //  Output:         void
 //  Author:         Sakshi Ravindra Darandale
 //  Date:           08/02/2026
 //
 ////////////////////////////////////////////////////////////////
 
-void Display()
+void Display(int iNo,int iCnt,char ch)
 {
-    static int i = 1;
 
-    if(i<=5)
+    if(iCnt<=iNo)
     {
-        printf("*\t");
-        i++;
+        printf("%c\t",ch);
+        ch++;
+        iCnt++;
 
-        Display();
+        Display(iNo,iCnt,ch);
     }
 }
 
@@ -39,7 +40,7 @@ void Display()
 
 int main()
 {
-    Display();
+    Display(5,1,'A');
 
     return 0;
 }
@@ -49,3 +50,4 @@ int main()
 //  End of main function
 //
 ////////////////////////////////////////////////////////////////
+
