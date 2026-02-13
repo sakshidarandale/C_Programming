@@ -44,20 +44,32 @@ void DisplayI(PNODE first)
 {
     while(first != NULL)    // Type 1
     {
-        printf("| %d | -> ",first->data);
-        first = first -> next;
+        DisplayI(first -> next);
+        printf("| %d | -> ",first->data);    
     }
     printf("NULL\n");
 }
 
+void DisplayR(PNODE first)
+{
+    if(first != NULL)    // Type 1
+    {
+        DisplayR(first -> next);
+        printf("| %d | -> ",first->data);
+        
+    }
+
+}
+
 int Count(PNODE first)
 {
-    int iCount = 0;
+    static int iCount = 0;
 
-    while(first != NULL)
+    if(first != NULL)
     {
         iCount++;
         first = first ->next;
+        Count(first);
     }
 
     return iCount;
@@ -74,7 +86,13 @@ int main()
     InsertLast(&head,51);
     InsertLast(&head,101);
 
-    DisplayI(head);
+    DisplayR(head);
+
+    printf("\n");
+
+    iRet = Count(head);
+
+    printf("%d\n",iRet);
 
     return 0;
 }

@@ -50,6 +50,22 @@ void DisplayI(PNODE first)
     printf("NULL\n");
 }
 
+void DisplayR(PNODE first)
+{
+    if(first != NULL)    // Type 1
+    {
+        printf("| %d | -> ",first->data);
+        first = first -> next;
+        DisplayR(first);
+    }
+
+    else
+    {
+        printf("NULL\n");
+    }
+   
+}
+
 int Count(PNODE first)
 {
     int iCount = 0;
@@ -74,7 +90,7 @@ int main()
     InsertLast(&head,51);
     InsertLast(&head,101);
 
-    DisplayI(head);
+    DisplayR(head);
 
     return 0;
 }
